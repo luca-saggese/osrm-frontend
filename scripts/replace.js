@@ -20,7 +20,7 @@ for (const filepath of [leafletOptions, debug]) {
   const BACKEND = process.env.OSRM_BACKEND || 'https://router.project-osrm.org'
   const LANGUAGE = process.env.OSRM_LANGUAGE || 'en'
   const DEFAULT_LAYER = process.env.OSRM_DEFAULT_LAYER || 'streets'
-  const MAPBOX_TOKEN = process.env.OSRM_MAPBOX_TOKEN || 'pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg'
+  const MAPBOX_TOKEN = process.env.OSRM_MAPBOX_TOKEN || 'pk.eyJ1IjoibHZ4IiwiYSI6ImNsbHFiNGF0bzBlbm8zb256cDRmMW11eGMifQ.FHZFXaWvfgCAo08gitmxyQ'
 
   // Edit Leaflet Options
   if (BACKEND) options = options.replace(/http[s]?:\/\/router\.project-osrm\.org/, BACKEND)
