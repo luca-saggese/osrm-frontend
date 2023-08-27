@@ -10,6 +10,7 @@
     "build": "npm run replace && npm run compile && cp node_modules/leaflet/dist/leaflet.css css/leaflet.css",
     "start-index": "budo src/index.js --serve=bundle.js --live -d | bistre",
     "start": "OSRM_BACKEND=http://as11.gotraxx.com:5000 npm run build && npm run start-index",
+    "build-docker": "docker build . -f docker/Dockerfile -t osrm-frontend-lvx", 
     "prepub": "npm run build"
   },
   "repository": {

@@ -13,8 +13,7 @@ RUN mkdir -p /src
 COPY package.json /src
 
 # Install app dependencies
-RUN apk add --no-cache sed nodejs && \
-    cd /src && \
+RUN cd /src && \
     npm install
 
 # Create app directory
