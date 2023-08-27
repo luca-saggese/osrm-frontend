@@ -4,7 +4,7 @@ var L = require('leaflet');
 
 var mapboxTileURL = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
     mapboxAttribution = '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
-    mapboxToken = 'pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg',
+    mapboxToken = 'pk.eyJ1IjoibHZ4IiwiYSI6ImNsbHFiNGF0bzBlbm8zb256cDRmMW11eGMifQ.FHZFXaWvfgCAo08gitmxyQ',
     osmAttribution = '© <a href="https://www.openstreetmap.org/copyright/en">OpenStreetMap</a> contributors',
     waymarkedtrailsAttribution = '© <a href="http://waymarkedtrails.org">Sarah Hoffmann</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)';
 
@@ -53,8 +53,8 @@ module.exports = {
     layer: streets
   },
   services: [{
-    label: 'Car (fastest)',
-    path: 'https://router.project-osrm.org/route/v1'
+    label: 'Truck',
+    path: 'http://as11.gotraxx.com:5000/route/v1'
   }],
   layer: [{
     'Mapbox Streets': streets,

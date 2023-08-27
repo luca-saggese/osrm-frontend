@@ -135,17 +135,19 @@ var controlOptions = {
   lineOptions: options.lrm.lineOptions,
   altLineOptions: options.lrm.altLineOptions,
   summaryTemplate: options.lrm.summaryTemplate,
+  postProcess: options.lrm.postProcess,
   containerClassName: options.lrm.containerClassName,
   alternativeClassName: options.lrm.alternativeClassName,
   stepClassName: options.lrm.stepClassName,
   language: 'en', // we are injecting own translations via osrm-text-instructions
   showAlternatives: options.lrm.showAlternatives,
   units: mergedOptions.units,
-  serviceUrl: leafletOptions.services[0].path,
+  //serviceUrl: leafletOptions.services[0].path,
+  serviceUrl: 'http://as11.gotraxx.com:5000/route/v1',
   useZoomParameter: options.lrm.useZoomParameter,
   routeDragInterval: options.lrm.routeDragInterval,
   collapsible: options.lrm.collapsible,
-  itineraryBuilder: new ItineraryBuilder(),
+  itineraryBuilder: new ItineraryBuilder()
 };
 var router = (new L.Routing.OSRMv1(controlOptions));
 router._convertRouteOriginal = router._convertRoute;
@@ -174,13 +176,15 @@ var toolsControl = tools.control(localization.get(mergedOptions.language), local
 var state = state(map, lrmControl, toolsControl, mergedOptions);
 
 plan.on('waypointgeocoded', function(e) {
-  if (plan._waypoints.filter(function(wp) { return !!wp.latLng; }).length < 2) {
+  if (plan._waypoints.filter(function(wp) {
+    return !!wp.latLng; 
+  }).length < 2) {
     map.panTo(e.waypoint.latLng);
   }
 });
 
 // add onClick event
-map.on('click', function (e){
+map.on('click', function (e) {
   addWaypoint(e.latlng);
 });
 function addWaypoint(waypoint) {
@@ -236,7 +240,9 @@ lrmControl.on('routeselected', function(e) {
 });
 plan.on('waypointschanged', function(e) {
   if (!e.waypoints ||
-      e.waypoints.filter(function(wp) { return !wp.latLng; }).length > 0) {
+      e.waypoints.filter(function(wp) {
+        return !wp.latLng; 
+      }).length > 0) {
     toolsControl.setRouteGeoJSON(null);
   }
 });

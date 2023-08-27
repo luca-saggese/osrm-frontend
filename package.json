@@ -9,7 +9,7 @@
     "compile": "browserify -d src/index.js -s osrm > bundle.raw.js && uglifyjs bundle.raw.js -c -m --source-map filename=bundle.js.map -o bundle.js",
     "build": "npm run replace && npm run compile && cp node_modules/leaflet/dist/leaflet.css css/leaflet.css",
     "start-index": "budo src/index.js --serve=bundle.js --live -d | bistre",
-    "start": "npm run build && npm run start-index",
+    "start": "OSRM_BACKEND=http://as11.gotraxx.com:5000 npm run build && npm run start-index",
     "prepub": "npm run build"
   },
   "repository": {
@@ -37,7 +37,7 @@
     "jxon": "^2.0.0-beta.5",
     "leaflet": "~1.9.4",
     "leaflet-control-geocoder": "~2.4.0",
-    "leaflet-routing-machine": "3.2.12",
+    "leaflet-routing-machine": "github:luca-saggese/leaflet-routing-machine",
     "leaflet.locatecontrol": "~0.79.0",
     "local-storage": "^2.0.0",
     "osrm-text-instructions": "~0.11.0",

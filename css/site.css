@@ -168,10 +168,10 @@
   right: 0px;
   bottom: 0px;
   margin: 0px !important;
-  background-image: url('../images/osrm_logo.svg');
-  -webkit-background-size: 200px 60px;
-  background-size: 200px 60px;
-  background-position: -20px 10px;
+  background-image: url('../images/logo-gotraxx.png');
+  -webkit-background-size: 80px 60px;
+  background-size: 80px 60px;
+  background-position: 20px 10px;
   background-repeat: no-repeat;
   padding-top: 50px;
 }
@@ -721,9 +721,9 @@ td.distance {
 ------------------------------------------------------- */
 @media only screen and (max-width:880px) {
   .osrm-directions-summary {
-    background-image: url('../images/osrm_logo.svg');
-    -webkit-background-size: 200px 45px;
-    background-size: 200px 45px;
+    background-image: url('../images/logo-gotraxx.png');
+    -webkit-background-size: 80px 45px;
+    background-size: 80px 45px;
     background-repeat: no-repeat;
     margin: 0;
     padding-top: 40px;
@@ -810,9 +810,9 @@ td.distance {
 ------------------------------------------------------- */
 @media only screen and (max-width:400px) {
 .osrm-directions-summary {
-  background-image: url('../images/osrm_logo.svg');
-  -webkit-background-size: 200px 45px;
-  background-size: 200px 45px;
+  background-image: url('../images/logo-gotraxx.png');
+  -webkit-background-size: 80px 45px;
+  background-size: 80px 45px;
   background-repeat: no-repeat;
   margin: 0;
   padding-top: 40px;
