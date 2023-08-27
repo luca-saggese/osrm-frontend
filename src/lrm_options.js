@@ -24,12 +24,12 @@ module.exports = {
     ],
     routeWhileDragging: true,
     summaryTemplate: function (data) {
-      var template = '<div class="osrm-directions-summary"><h2>{name}</h2><h3>{distance}, {time}</h3><h3>{cost}</h3></div>';
+      var template = '<div class="osrm-directions-summary"><h2>{name}</h2><h3>Distanze: {distance}, {time}</h3><h3>Costo: {cost}</h3></div>';
       console.log('summaryTemplate', data)
       var gasCost = Math.round(data.summary.totalDistance / 1000 / 2.5 * 1.9);
       var tollCost =  Math.round(data.summary.toll.cost[1]) 
       var total =  Math.round(data.summary.totalDistance / 1000 / 2.5 * 1.9 + data.summary.toll.cost[1]);
-      data.cost = gasCost + 'E (gas) + ' + tollCost + 'E (toll) = ' + total + 'E'
+      data.cost = gasCost + '€ (gas) + ' + tollCost + '€ (toll) = ' + total + '€'
       return L.Util.template(template, data)
     },
     postProcess: function (route, responseRoute) {
